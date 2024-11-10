@@ -20,7 +20,6 @@ public class EnemyMovement : MonoBehaviour
         // If the cabinet is not knocked down, move the enemy left
         if (!isKnockedDown)
         {
-            Debug.Log("movin");
             MoveEnemyToLeft();
         }
     }

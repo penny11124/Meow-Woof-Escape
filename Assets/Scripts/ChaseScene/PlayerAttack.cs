@@ -11,16 +11,16 @@ public class PlayerAttack: MonoBehaviour
     {
         // Subscribe to the Attack action
         var playerInput = GetComponent<PlayerInput>();
-        playerInput.actions["Attack"].performed += OnAttackPressed;
-        playerInput.actions["Attack"].canceled += OnAttackReleased;
+        playerInput.actions["interaction"].performed += OnAttackPressed;
+        playerInput.actions["interaction"].canceled += OnAttackReleased;
     }
 
     private void OnDisable()
     {
         // Unsubscribe from the Attack action
         var playerInput = GetComponent<PlayerInput>();
-        playerInput.actions["Attack"].performed -= OnAttackPressed;
-        playerInput.actions["Attack"].canceled -= OnAttackReleased;
+        playerInput.actions["interaction"].performed -= OnAttackPressed;
+        playerInput.actions["interaction"].canceled -= OnAttackReleased;
     }
 
     private void OnAttackPressed(InputAction.CallbackContext context)
