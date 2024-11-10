@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3162864063955785645}
   - component: {fileID: 3162864063955785644}
   - component: {fileID: 3162864063955785641}
+  - component: {fileID: 1628593314829048135}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Dog
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1981043429, guid: 56511fb792b962147a02ab7bd610f979, type: 3}
   m_Color: {r: 1, g: 0.7893774, b: 0.3150943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,8 +130,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.48, y: 0.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -196,6 +197,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f554578d-c007-4b16-8887-a9f7eab2c5c6
     m_ActionName: Dog/Jump[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3e122251-5706-4bc8-a9f6-bffc859f9e83
+    m_ActionName: Dog/interaction[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Dog
@@ -293,8 +298,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.48, y: 0.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -303,3 +308,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.01, y: 0.01}
   m_EdgeRadius: 0
+--- !u!95 &1628593314829048135
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162864063955785623}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64f02f40a4a6506479cb4a9461022be7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

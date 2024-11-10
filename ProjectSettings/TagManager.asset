@@ -14,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Background
   - 
   - 
   - 
@@ -44,9 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: item
-    uniqueID: 1484226543
+  - name: Background
+    uniqueID: 1012733853
+    locked: 0
+  - name: Tilemap
+    uniqueID: 115506451
     locked: 0
   - name: player
     uniqueID: 654801511
+    locked: 0
+  - name: item
+    uniqueID: 1484226543
     locked: 0
