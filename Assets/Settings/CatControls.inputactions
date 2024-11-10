@@ -24,9 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "interaction",
                     "type": "Button",
-                    "id": "4e266326-162f-46e4-86ec-2a16502c8efd",
+                    "id": "103d7f2b-fb30-43b4-9d9b-90294f77c026",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -80,12 +80,12 @@
                 },
                 {
                     "name": "",
-                    "id": "8de97777-385b-4994-b51e-54aea30f80da",
-                    "path": "<Keyboard>/z",
+                    "id": "5ec0a28a-3270-4a05-a4f5-b62d4000e369",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
