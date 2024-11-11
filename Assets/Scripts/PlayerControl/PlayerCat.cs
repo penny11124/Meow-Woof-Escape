@@ -43,7 +43,7 @@ public class PlayerCat : MonoBehaviour
             {
                 // 打開 Cat 和 Dog 主碰撞器之間的碰撞，使 Cat 可以附著在 Dog 上
                 Physics2D.IgnoreCollision(catCollider, dogMainCollider, false);
-                transform.SetParent(dogMainCollider.transform); // 設置 Cat 為 Dog 的子物件
+                // transform.SetParent(dogMainCollider.transform); // 設置 Cat 為 Dog 的子物件
             }
         }
     }
@@ -57,7 +57,7 @@ public class PlayerCat : MonoBehaviour
             {
                 // 忽略 Cat 和 Dog 主碰撞器之間的碰撞
                 Physics2D.IgnoreCollision(catCollider, dogMainCollider, true);
-                transform.SetParent(null); // 解除父子關係
+                // transform.SetParent(null); // 解除父子關係
             }
         }
     }
