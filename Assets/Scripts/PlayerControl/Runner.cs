@@ -22,7 +22,7 @@ public class Runner : MonoBehaviour
     public bool runningAgainstWall => (collisionState.touchingRight && runningDirection > 0) ||
                 (collisionState.touchingLeft && runningDirection < 0);
     public void Run(InputAction.CallbackContext ctx){
-        Run(ctx.ReadValue<Vector2>().x);    
+        Run(ctx.ReadValue<Vector2>().x);
     }
     public void Run(float x){
         isRunning = !Mathf.Approximately(x, 0);

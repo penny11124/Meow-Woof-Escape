@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DogAnimator : ScriptAnimator
 {
+    private PlayerAttack attacker;
     private Runner runner;
     private Jumper jumper;
     private PlayerState playerState;
@@ -16,10 +17,12 @@ public class DogAnimator : ScriptAnimator
         RequireStates(
             nameof(AnimState.Idle),
             nameof(AnimState.Jump),
-            nameof(AnimState.Run)
+            nameof(AnimState.Run),
+            nameof(AnimState.Attack)
             // nameof(AnimState.Victory)
         );
         #endif
+        TryGetComponent<PlayerAttack>(out attacker);
         TryGetComponent<Runner>(out runner);
         TryGetComponent<Jumper>(out jumper);
         TryGetComponent<PlayerState>(out playerState);
@@ -33,7 +36,10 @@ public class DogAnimator : ScriptAnimator
         // if(playerState.hasWon){
         //     PlayStateIfNotInState(AnimState.Victory);
         // }
-        if(jumper.isRising){
+        if(attacker.isAttacking){
+            PlayStateIfNotInState(AnimState.Attack);
+        }
+        else if(jumper.isRising){
             PlayStateIfNotInState(AnimState.Jump);
         }
         else if(runner.isRunning){

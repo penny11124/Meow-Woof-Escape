@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack: MonoBehaviour
 {
+    public bool isAttacking { get; private set; } = false;
     public bool attackPressed = false;
 
     private void OnEnable()
@@ -25,11 +26,15 @@ public class PlayerAttack: MonoBehaviour
 
     private void OnAttackPressed(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+        isAttacking = true;
         attackPressed = true;
     }
 
     private void OnAttackReleased(InputAction.CallbackContext context)
     {
+        Debug.Log(context);
+        isAttacking = false;
         attackPressed = false;
     }
 }
