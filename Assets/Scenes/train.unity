@@ -168,6 +168,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 369835315689731906, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 369835315689731906, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 369835315689731906, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 369835315689731906, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 369835315689731906, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 369835315689731906, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 369835315689731906, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3162864063955785616, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -479,6 +507,18 @@ PrefabInstance:
     - target: {fileID: 3162864063955785646, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
       propertyPath: jumpCurve.m_Curve.Array.data[0].value
       value: 5.9906344
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125260821585088349, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125260821585088349, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125260821585088349, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff4150d49b1650946b965df60d84fb1f, type: 3}
@@ -917,6 +957,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8039824419488386133, guid: edccea869695ac34e920d445280ca48e, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1491978295}
+    - target: {fileID: -8039824419488386133, guid: edccea869695ac34e920d445280ca48e, type: 3}
+      propertyPath: runSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8039824419488386133, guid: edccea869695ac34e920d445280ca48e, type: 3}
+      propertyPath: idleSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8039824419488386133, guid: edccea869695ac34e920d445280ca48e, type: 3}
+      propertyPath: jumpSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8039824419488386133, guid: edccea869695ac34e920d445280ca48e, type: 3}
+      propertyPath: attackSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477908335060043957, guid: edccea869695ac34e920d445280ca48e, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652360555801043466, guid: edccea869695ac34e920d445280ca48e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5652360555801043467, guid: edccea869695ac34e920d445280ca48e, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1854,6 +1922,11 @@ Transform:
 --- !u!4 &1491978283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5652360555801043469, guid: edccea869695ac34e920d445280ca48e, type: 3}
+  m_PrefabInstance: {fileID: 1007632794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1491978295 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5652360555801043468, guid: edccea869695ac34e920d445280ca48e, type: 3}
   m_PrefabInstance: {fileID: 1007632794}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1511264350
