@@ -17,6 +17,7 @@ public class CatAnimator : ScriptAnimator
         RequireStates(
             nameof(AnimState.Idle),
             nameof(AnimState.Jump),
+            nameof(AnimState.Fall),
             nameof(AnimState.Run),
             nameof(AnimState.Attack)
             // nameof(AnimState.Victory)
@@ -41,6 +42,9 @@ public class CatAnimator : ScriptAnimator
         }
         else if(jumper.isRising){
             PlayStateIfNotInState(AnimState.Jump);
+        }
+        else if(jumper.isFalling){
+            PlayStateIfNotInState(AnimState.Fall);
         }
         else if(runner.isRunning){
             PlayStateIfNotInState(AnimState.Run);
