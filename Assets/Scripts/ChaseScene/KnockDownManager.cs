@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class KnockDownManager : MonoBehaviour
 {
-    public PlayerAttack playerA;
-    public PlayerAttack playerB;
+    public PlayerAttack cat;
+    public PlayerAttack dog;
     public GameObject cabinet;  // The cabinet game object to knock down
 
     private bool knockdownTriggered = false;
 
     void Update()
     {
-        if (!knockdownTriggered && playerA.attackPressed && playerB.attackPressed)
+        if (!knockdownTriggered && cat.attackPressed && dog.attackPressed)
         {
             TriggerKnockdown();
         }

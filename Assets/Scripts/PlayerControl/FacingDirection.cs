@@ -15,7 +15,7 @@ public class FacingDirection : MonoBehaviour
         direction = initialDirection;
     }
     public void SetDirection(float xAxis){
-        if(xAxis > 0) direction = Direction.Right;
-        else if(xAxis < 0) direction = Direction.Left;
+        if(xAxis < 0) direction = Direction.Right;
+        else if(xAxis > 0) direction = Direction.Left;
     }
 }
