@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Cat
   - Dog
+  - Baby
   layers:
   - Default
   - TransparentFX
