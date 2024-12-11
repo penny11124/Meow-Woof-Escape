@@ -9,7 +9,7 @@ public class CrashPrefab : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Baby") || collision.gameObject.CompareTag("Floor"))
         {
-            Debug.Log("hit the floor");
+            //Debug.Log("hit the floor");
             if (crashEffectPrefab != null)
             {
                Instantiate(crashEffectPrefab, transform.position, Quaternion.identity);

@@ -9,6 +9,7 @@ public class BlockGen : MonoBehaviour
     private float currentTime;
     private int gameMode = 0; //¹CÀ¸Ãø«×
     private float spawnInterval;
+    private float[] spawnPoints = new float[] { 0.0f, 2.0f, 4.0f, -2.0f, -4.0f };
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,7 @@ public class BlockGen : MonoBehaviour
         if (float.TryParse(timer.text, out float parsedTime))
         {
             currentTime = parsedTime; // Update currentTime if parsing succeeds
-            ChangeGameMode(currentTime);
-            Debug.Log(gameMode);
+            //Debug.Log(gameMode);
         }
         else
         {
@@ -85,8 +85,10 @@ public class BlockGen : MonoBehaviour
 
     void SpawnBlock()
     {
-        float spawnX = Random.Range(-8.0f, 8.0f); // Random X position
+        int randomIndex = Random.Range(0,spawnPoints.Length);
+        float spawnX = spawnPoints[randomIndex]; // Random X position
         Vector3 spawnPosition = new Vector3(spawnX, transform.position.y, 0);
         Instantiate(blockPrefab, spawnPosition, Quaternion.identity);
     }
+
 }

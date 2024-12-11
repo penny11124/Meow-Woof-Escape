@@ -7,7 +7,6 @@ public class HoldObj : MonoBehaviour
     public GameObject dog;
     public GameObject cat;
     private bool isHolding = false;
-    private bool player2KeyPressed = false;
     private string holder = "None";
     private Vector3 objPosition;
     private Vector3 dogPosition;
@@ -15,6 +14,8 @@ public class HoldObj : MonoBehaviour
     private Vector3 holdingPosition;
     private Rigidbody2D dogRigid;
     private Rigidbody2D catRigid;
+    public string catHold = "None";
+    public string dogHold = "None";
     // Start is called before the first frame update
     void Start()
     {
@@ -46,17 +47,18 @@ public class HoldObj : MonoBehaviour
                 isHolding = true;
                 transform.position = dogPosition + new Vector3(0,0.9f,0);
                 dogRigid.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
+                dogHold = gameObject.name;
+                Debug.Log("dogHold: " + dogHold);
             }
             else if (holder == "Dog" && isHolding == true) {
                 isHolding = false;
                 transform.position = objPosition;
                 dogRigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                dogHold = "None";
+                Debug.Log("dogHold: " + dogHold);
             }
         }
 
-        if (context.canceled)  // 當放開按鍵時
-        {
-        }
     }
     public void catInteraction(InputAction.CallbackContext context)
     {
@@ -67,18 +69,18 @@ public class HoldObj : MonoBehaviour
                 isHolding = true;
                 transform.position = catPosition + new Vector3(0.2f, 0.7f, 0);
                 catRigid.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
+                catHold = gameObject.name;
+                //Debug.Log("catHold: " + catHold);
             }
             else if (holder == "Cat" && isHolding == true)
             {
                 isHolding = false;
                 transform.position = objPosition;
                 catRigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+                catHold = "None";
+                //Debug.Log("catHold: " + catHold);
             }
         }
 
-        if (context.canceled)  // 當放開按鍵時
-        {
-            player2KeyPressed = false;
-        }
     }
 }
