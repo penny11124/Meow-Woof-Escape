@@ -9,7 +9,7 @@ public class BlockGen : MonoBehaviour
     private float currentTime;
     private int gameMode = 0; //¹CÀ¸Ãø«×
     private float spawnInterval;
-    private float[] spawnPoints = new float[] { 0.0f, 2.0f, 4.0f, -2.0f, -4.0f };
+    private float[] spawnPoints = new float[] {  2.0f, 4.0f, -2.0f, -4.0f};
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +23,13 @@ public class BlockGen : MonoBehaviour
         if (float.TryParse(timer.text, out float parsedTime))
         {
             currentTime = parsedTime; // Update currentTime if parsing succeeds
-            //Debug.Log(gameMode);
+            Debug.Log(gameMode);
         }
         else
         {
             Debug.LogError("Failed to parse timer text as a number.");
         }
-        
+        ChangeGameMode(currentTime);
         
     }
     void ChangeGameMode(float time)
@@ -43,12 +43,17 @@ public class BlockGen : MonoBehaviour
         else if (time <= 50 && time > 30)
         {
             newGameMode = 2;
+            spawnPoints = new float[] { 0.0f, 2.0f, 4.0f, -2.0f, -4.0f };
         }
-        else if (time <= 30 && time > 0)
+        else if (time <= 30 && time > 10)
         {
             newGameMode = 3;
+            spawnPoints = new float[] { 0.0f, 1.8f, 3.6f, 5.4f, -1.8f, -3.6f, -5.4f };
         }
-
+        else if (time <= 10 && time > 0)
+        {
+            newGameMode = 4;
+        }
         if (newGameMode != gameMode)
         {
             gameMode = newGameMode;
@@ -66,16 +71,19 @@ public class BlockGen : MonoBehaviour
         switch (gameMode)
         {
             case 1:
-                spawnInterval = 3.0f; // Slower spawning
+                spawnInterval = 2.5f; // Slower spawning
                 break;
             case 2:
-                spawnInterval = 2.0f; // Medium spawning
+                spawnInterval = 1.7f; // Medium spawning
                 break;
             case 3:
                 spawnInterval = 1.0f; // Faster spawning
                 break;
+            case 4:
+                spawnInterval = 0.75f; // Faster spawning
+                break;
             default:
-                spawnInterval = 3.0f; // Default slow spawning
+                spawnInterval = 4.0f; // Default slow spawning
                 break;
         }
 

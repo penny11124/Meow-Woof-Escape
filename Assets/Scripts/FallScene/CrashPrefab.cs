@@ -5,6 +5,9 @@ using UnityEngine;
 public class CrashPrefab : MonoBehaviour
 {
     public GameObject crashEffectPrefab;
+    private void Start()
+    {
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Baby") || collision.gameObject.CompareTag("Floor"))
