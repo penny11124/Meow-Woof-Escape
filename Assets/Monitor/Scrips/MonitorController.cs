@@ -10,17 +10,39 @@ public class MonitorController : MonoBehaviour
     public Color detectionColor = new Color(1f, 0f, 0f, 0.3f); // 扇形顏色
     public LayerMask detectionLayer; // 偵測圖層 (Cat 和 Dog)
     public float detectionAngleOffset = 270f; // 偵測範圍的旋轉角度
+    public Vector3 centerOffset = Vector3.zero; // 圓心偏移量
 
     private Mesh detectionMesh;
     private Material detectionMaterial;
     private bool isDetecting = false;
+    private GameObject detectionMeshObject; // 子物件的引用
 
     void Start()
     {
         // 初始化 Mesh 和材質
         detectionMesh = new Mesh();
-        detectionMaterial = new Material(Shader.Find("Sprites/Default"));
-        detectionMaterial.color = detectionColor;
+        detectionMaterial = new Material(Shader.Find("Sprites/Default"))
+        {
+            color = detectionColor
+        };
+
+        // 創建子物件來渲染 Mesh
+        detectionMeshObject = new GameObject("DetectionMesh");
+        detectionMeshObject.transform.SetParent(transform);
+        detectionMeshObject.transform.localPosition = Vector3.zero;
+        detectionMeshObject.transform.localRotation = Quaternion.identity;
+
+        // 添加 MeshFilter 和 MeshRenderer 到子物件
+        MeshFilter meshFilter = detectionMeshObject.AddComponent<MeshFilter>();
+        meshFilter.mesh = detectionMesh;
+
+        MeshRenderer meshRenderer = detectionMeshObject.AddComponent<MeshRenderer>();
+        meshRenderer.material = detectionMaterial;
+        meshRenderer.sortingLayerName = "item"; // 設定為目標 Sorting Layer
+        meshRenderer.sortingOrder = 0; // 根據需要設定渲染順序
+
+        // 偵測啟用時控制 Mesh 的可見性
+        detectionMeshObject.SetActive(false);
 
         // 啟動偵測循環
         StartCoroutine(DetectionCycle());
@@ -30,8 +52,15 @@ public class MonitorController : MonoBehaviour
     {
         if (isDetecting)
         {
-            UpdateDetectionArea(); // 繪製扇形範圍
-            DetectObjectsInArea(); // 檢測碰撞
+            // 啟用扇形並繪製
+            detectionMeshObject.SetActive(true);
+            UpdateDetectionArea();
+            DetectObjectsInArea();
+        }
+        else
+        {
+            // 停止時隱藏扇形
+            detectionMeshObject.SetActive(false);
         }
     }
 
@@ -39,13 +68,13 @@ public class MonitorController : MonoBehaviour
     {
         while (true)
         {
-            isDetecting = true;  // 開始偵測
+            isDetecting = true; // 開始偵測
             Debug.Log("開始偵測!!");
-            yield return new WaitForSeconds(1f); // 啟動1秒
+            yield return new WaitForSeconds(detectionDelay); // 啟動1秒
 
             isDetecting = false; // 停止偵測
             Debug.Log("停止偵測!!");
-            yield return new WaitForSeconds(1f); // 關閉1秒
+            yield return new WaitForSeconds(detectionDelay); // 關閉1秒
         }
     }
 
@@ -55,15 +84,16 @@ public class MonitorController : MonoBehaviour
         Vector3[] vertices = new Vector3[52]; // 50段 + 圓心 + 結尾
         int[] triangles = new int[150]; // 每段3個點，共50段
 
-        vertices[0] = Vector3.zero; // 圓心
+        vertices[0] = centerOffset; // 圓心設定為偏移位置
         float angleStep = detectionAngle / 50; // 每段的角度
-        float startAngle = -detectionAngle / 2;
+        float startAngle = -detectionAngle / 2 + (detectionAngleOffset + 90); // 包含偏移量的起始角度
 
         for (int i = 0; i <= 50; i++)
         {
             float currentAngle = startAngle + angleStep * i;
             float radian = currentAngle * Mathf.Deg2Rad;
-            vertices[i + 1] = new Vector3(Mathf.Cos(radian), Mathf.Sin(radian)) * detectionRadius;
+            Vector3 vertexPosition = new Vector3(Mathf.Cos(radian), Mathf.Sin(radian)) * detectionRadius;
+            vertices[i + 1] = centerOffset + vertexPosition;
 
             if (i < 50)
             {
@@ -80,17 +110,19 @@ public class MonitorController : MonoBehaviour
         detectionMesh.triangles = triangles;
         detectionMesh.RecalculateNormals();
 
-        // 繪製 Mesh
-        Graphics.DrawMesh(detectionMesh, transform.localToWorldMatrix, detectionMaterial, 0);
+        // 自動渲染
+        detectionMeshObject.GetComponent<MeshFilter>().mesh = detectionMesh;
     }
 
     private void DetectObjectsInArea()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius, detectionLayer);
+        // 偵測範圍基於圓心偏移位置
+        Vector3 detectionCenter = transform.position + centerOffset;
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(detectionCenter, detectionRadius, detectionLayer);
         foreach (Collider2D collider in hitColliders)
         {
-            // 計算目標與中心的方向向量
-            Vector3 directionToTarget = collider.transform.position - transform.position;
+            // 計算目標與圓心的方向向量
+            Vector3 directionToTarget = collider.transform.position - detectionCenter;
 
             // 計算帶偏移的基準方向 (transform.up 經過旋轉)
             Vector3 rotatedUp = Quaternion.Euler(0, 0, detectionAngleOffset) * transform.up;
