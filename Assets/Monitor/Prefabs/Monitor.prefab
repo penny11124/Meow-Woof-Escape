@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 1979897543068284805}
   - component: {fileID: 111648107483752822}
   - component: {fileID: -4710680739358081553}
-  - component: {fileID: 4167597092861310016}
+  - component: {fileID: 7008436857529679966}
   m_Layer: 0
   m_Name: Monitor
   m_TagString: Untagged
@@ -239,7 +239,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4167597092861310016
+--- !u!114 &7008436857529679966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

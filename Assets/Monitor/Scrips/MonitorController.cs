@@ -9,8 +9,8 @@ public class MonitorController : MonoBehaviour
     public float detectionDelay = 1f; // 開始檢測的延遲時間
     public Color detectionColor = new Color(1f, 0f, 0f, 0.3f); // 扇形顏色
     public LayerMask detectionLayer; // 偵測圖層 (Cat 和 Dog)
-    public float detectionAngleOffset = 270f; // 偵測範圍的旋轉角度
-    public Vector3 centerOffset = Vector3.zero; // 圓心偏移量
+    public float detectionAngleOffset = 245f; // 偵測範圍的旋轉角度
+    public Vector3 centerOffset = new Vector3(0.25f, 0.1f, 0f); // 圓心偏移量
 
     private Mesh detectionMesh;
     private Material detectionMaterial;
@@ -19,6 +19,8 @@ public class MonitorController : MonoBehaviour
 
     void Start()
     {
+        // 自動追加 "Cat" 和 "Dog" 層到 detectionLayer
+        AddLayersToDetection("Cat", "Dog");
         // 初始化 Mesh 和材質
         detectionMesh = new Mesh();
         detectionMaterial = new Material(Shader.Find("Sprites/Default"))
@@ -78,6 +80,22 @@ public class MonitorController : MonoBehaviour
         }
     }
 
+    private void AddLayersToDetection(params string[] layerNames)
+    {
+        foreach (string layerName in layerNames)
+        {
+            int layer = LayerMask.NameToLayer(layerName); // 根據層名獲取層編號
+            if (layer >= 0) // 如果層存在
+            {
+                detectionLayer |= (1 << layer); // 使用位運算將該層加入 LayerMask
+            }
+            else
+            {
+                Debug.LogWarning($"圖層 '{layerName}' 不存在，請確保已創建此圖層");
+            }
+        }
+    }
+
     private void UpdateDetectionArea()
     {
         // 計算扇形的頂點
@@ -124,8 +142,9 @@ public class MonitorController : MonoBehaviour
             // 計算目標與圓心的方向向量
             Vector3 directionToTarget = collider.transform.position - detectionCenter;
 
-            // 計算帶偏移的基準方向 (transform.up 經過旋轉)
-            Vector3 rotatedUp = Quaternion.Euler(0, 0, detectionAngleOffset) * transform.up;
+            // 計算帶偏移的基準方向 (考慮 GameObject 的 rotation)
+            Quaternion rotation = transform.rotation; // 獲取旋轉
+            Vector3 rotatedUp = rotation * (Quaternion.Euler(0, 0, detectionAngleOffset) * Vector3.up);
 
             // 計算目標角度
             float angleToTarget = Vector3.Angle(rotatedUp, directionToTarget);
@@ -138,4 +157,5 @@ public class MonitorController : MonoBehaviour
             }
         }
     }
+
 }
