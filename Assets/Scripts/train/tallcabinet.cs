@@ -62,6 +62,7 @@ public class tallcabinet : MonoBehaviour
         if (context.started)  // 當按下按鍵時
         {
             player2KeyPressed = true;
+            Debug.Log("Dog 按下 Enter 鍵");
         }
 
         if (context.canceled)  // 當放開按鍵時
@@ -74,6 +75,7 @@ public class tallcabinet : MonoBehaviour
         if (context.started)  // 當按下按鍵時
         {
             player1KeyPressed = true;
+            Debug.Log("Cat 按下空白鍵");
         }
 
         if (context.canceled)  // 當放開按鍵時
