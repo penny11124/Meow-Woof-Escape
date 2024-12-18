@@ -55,9 +55,18 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""MoveUp"",
+                    ""type"": ""Value"",
+                    ""id"": ""db76e4bc-3679-47f8-82cb-28dca13eaffd"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""b8df5d89-feb1-4528-aef5-4de833e03cea"",
+                    ""id"": ""373af233-a36b-4a25-9857-1c79028592bf"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -121,8 +130,41 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""7444d0b0-48d5-4a6f-b331-4b0b44af85cc"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""10b410bf-0e1a-47de-909a-ad20b6f9f87f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""44c69dad-f52a-4db0-acc1-d5e7df40803e"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
-                    ""id"": ""0d143886-8503-462b-b764-daba9b29de8b"",
+                    ""id"": ""9c0c78f4-d30c-49b9-8579-4945cc645812"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -141,6 +183,7 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
         m_Dog_Move = m_Dog.FindAction("Move", throwIfNotFound: true);
         m_Dog_Jump = m_Dog.FindAction("Jump", throwIfNotFound: true);
         m_Dog_interaction = m_Dog.FindAction("interaction", throwIfNotFound: true);
+        m_Dog_MoveUp = m_Dog.FindAction("MoveUp", throwIfNotFound: true);
         m_Dog_Pause = m_Dog.FindAction("Pause", throwIfNotFound: true);
     }
 
@@ -204,6 +247,7 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Dog_Move;
     private readonly InputAction m_Dog_Jump;
     private readonly InputAction m_Dog_interaction;
+    private readonly InputAction m_Dog_MoveUp;
     private readonly InputAction m_Dog_Pause;
     public struct DogActions
     {
@@ -212,6 +256,7 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Dog_Move;
         public InputAction @Jump => m_Wrapper.m_Dog_Jump;
         public InputAction @interaction => m_Wrapper.m_Dog_interaction;
+        public InputAction @MoveUp => m_Wrapper.m_Dog_MoveUp;
         public InputAction @Pause => m_Wrapper.m_Dog_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Dog; }
         public void Enable() { Get().Enable(); }
@@ -231,6 +276,9 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
                 @interaction.started -= m_Wrapper.m_DogActionsCallbackInterface.OnInteraction;
                 @interaction.performed -= m_Wrapper.m_DogActionsCallbackInterface.OnInteraction;
                 @interaction.canceled -= m_Wrapper.m_DogActionsCallbackInterface.OnInteraction;
+                @MoveUp.started -= m_Wrapper.m_DogActionsCallbackInterface.OnMoveUp;
+                @MoveUp.performed -= m_Wrapper.m_DogActionsCallbackInterface.OnMoveUp;
+                @MoveUp.canceled -= m_Wrapper.m_DogActionsCallbackInterface.OnMoveUp;
                 @Pause.started -= m_Wrapper.m_DogActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_DogActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_DogActionsCallbackInterface.OnPause;
@@ -247,6 +295,9 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
                 @interaction.started += instance.OnInteraction;
                 @interaction.performed += instance.OnInteraction;
                 @interaction.canceled += instance.OnInteraction;
+                @MoveUp.started += instance.OnMoveUp;
+                @MoveUp.performed += instance.OnMoveUp;
+                @MoveUp.canceled += instance.OnMoveUp;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -259,6 +310,7 @@ public partial class @DogControls : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
+        void OnMoveUp(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
 }

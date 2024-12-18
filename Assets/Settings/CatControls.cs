@@ -55,9 +55,18 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""MoveUp"",
+                    ""type"": ""Value"",
+                    ""id"": ""ed438f5f-4bb3-4011-80b7-2a580cbf3b9a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""fda51ed5-20f6-4cbb-9a4d-b90f9af21fde"",
+                    ""id"": ""6736e86d-7386-4b08-b997-b1e322b8b332"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -121,8 +130,41 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""WS"",
+                    ""id"": ""cc2a468a-b9dd-4b2b-ba67-3b274c6c0b8d"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f0be898c-9ff4-42ea-aa46-b5711735a5ba"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a712770c-6571-4d83-ad3d-70b8c3264a9b"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
-                    ""id"": ""0418204b-637c-46bf-a1dc-cfa801717c9c"",
+                    ""id"": ""ff9f4cfe-3f05-446a-abc6-9d1948062f78"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -141,6 +183,7 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
         m_Cat_Move = m_Cat.FindAction("Move", throwIfNotFound: true);
         m_Cat_Jump = m_Cat.FindAction("Jump", throwIfNotFound: true);
         m_Cat_interaction = m_Cat.FindAction("interaction", throwIfNotFound: true);
+        m_Cat_MoveUp = m_Cat.FindAction("MoveUp", throwIfNotFound: true);
         m_Cat_Pause = m_Cat.FindAction("Pause", throwIfNotFound: true);
     }
 
@@ -204,6 +247,7 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Cat_Move;
     private readonly InputAction m_Cat_Jump;
     private readonly InputAction m_Cat_interaction;
+    private readonly InputAction m_Cat_MoveUp;
     private readonly InputAction m_Cat_Pause;
     public struct CatActions
     {
@@ -212,6 +256,7 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Cat_Move;
         public InputAction @Jump => m_Wrapper.m_Cat_Jump;
         public InputAction @interaction => m_Wrapper.m_Cat_interaction;
+        public InputAction @MoveUp => m_Wrapper.m_Cat_MoveUp;
         public InputAction @Pause => m_Wrapper.m_Cat_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Cat; }
         public void Enable() { Get().Enable(); }
@@ -231,6 +276,9 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
                 @interaction.started -= m_Wrapper.m_CatActionsCallbackInterface.OnInteraction;
                 @interaction.performed -= m_Wrapper.m_CatActionsCallbackInterface.OnInteraction;
                 @interaction.canceled -= m_Wrapper.m_CatActionsCallbackInterface.OnInteraction;
+                @MoveUp.started -= m_Wrapper.m_CatActionsCallbackInterface.OnMoveUp;
+                @MoveUp.performed -= m_Wrapper.m_CatActionsCallbackInterface.OnMoveUp;
+                @MoveUp.canceled -= m_Wrapper.m_CatActionsCallbackInterface.OnMoveUp;
                 @Pause.started -= m_Wrapper.m_CatActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_CatActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_CatActionsCallbackInterface.OnPause;
@@ -247,6 +295,9 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
                 @interaction.started += instance.OnInteraction;
                 @interaction.performed += instance.OnInteraction;
                 @interaction.canceled += instance.OnInteraction;
+                @MoveUp.started += instance.OnMoveUp;
+                @MoveUp.performed += instance.OnMoveUp;
+                @MoveUp.canceled += instance.OnMoveUp;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -259,6 +310,7 @@ public partial class @CatControls : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
+        void OnMoveUp(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
 }

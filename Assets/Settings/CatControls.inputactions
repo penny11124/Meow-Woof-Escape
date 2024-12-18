@@ -33,13 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "fda51ed5-20f6-4cbb-9a4d-b90f9af21fde",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                     "name": "MoveUp",
                     "type": "Value",
                     "id": "ed438f5f-4bb3-4011-80b7-2a580cbf3b9a",
@@ -47,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "6736e86d-7386-4b08-b997-b1e322b8b332",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -106,15 +108,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "0418204b-637c-46bf-a1dc-cfa801717c9c",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                     "name": "WS",
                     "id": "cc2a468a-b9dd-4b2b-ba67-3b274c6c0b8d",
                     "path": "2DVector",
@@ -146,6 +139,17 @@
                     "action": "MoveUp",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "ff9f4cfe-3f05-446a-abc6-9d1948062f78",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
