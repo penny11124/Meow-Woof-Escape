@@ -9,6 +9,8 @@ TagManager:
   - Dog
   - Baby
   - FallingBlock
+  - Cabinet
+  - Out
   layers:
   - Default
   - TransparentFX
