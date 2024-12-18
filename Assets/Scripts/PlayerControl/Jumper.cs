@@ -27,7 +27,6 @@ public class Jumper : MonoBehaviour
     }
 
     protected virtual void DoJump() {
-        GameManager.ToggleTiles();
         jumpStartTime = Time.fixedTime;
         rb.velocity = new Vector2(rb.velocity.x, jumpCurve.Evaluate(0));
         onJump?.Invoke();
