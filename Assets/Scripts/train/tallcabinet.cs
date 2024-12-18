@@ -10,20 +10,20 @@ public class tallcabinet : MonoBehaviour
     private bool trigger = false;
 
     private bool player1InContact = false; // 玩家1是否接觸物件
-    private bool player2InContact = false; // 玩家2是否接觸物件
+    // private bool player2InContact = false; // 玩家2是否接觸物件
     private bool player1KeyPressed = false; // 玩家1是否按下空白鍵
-    private bool player2KeyPressed = false; // 玩家2是否按下Enter鍵
+    // private bool player2KeyPressed = false; // 玩家2是否按下Enter鍵
 
 
     void Update()
     {   
         if (player1InContact && player1KeyPressed){         
-            if (player2InContact && player2KeyPressed){
+            // if (player2InContact && player2KeyPressed){
                 if(trigger==false){
                     trigger = true;
                     StartCoroutine(RotateTo90Degrees());
                 }
-            }
+            // }
         }
     }
 
@@ -35,11 +35,11 @@ public class tallcabinet : MonoBehaviour
             player1InContact = true;
             //Debug.Log("cAT");
         }
-        else if (collision.collider.CompareTag("Dog"))
-        {
-            player2InContact = true;
-            //Debug.Log("dog");
-        }
+        // else if (collision.collider.CompareTag("Dog"))
+        // {
+        //     player2InContact = true;
+        //     //Debug.Log("dog");
+        // }
     }
 
     // 當玩家離開碰撞範圍
@@ -49,27 +49,27 @@ public class tallcabinet : MonoBehaviour
         {
             player1InContact = false;
         }
-        else if (collision.collider.CompareTag("Dog"))
-        {
-            player2InContact = false;
-        }
+        // else if (collision.collider.CompareTag("Dog"))
+        // {
+        //     player2InContact = false;
+        // }
     }
 
 
     
-    public void dogInteraction(InputAction.CallbackContext context)
-    {
-        if (context.started)  // 當按下按鍵時
-        {
-            player2KeyPressed = true;
-            Debug.Log("Dog 按下 Enter 鍵");
-        }
+    // public void dogInteraction(InputAction.CallbackContext context)
+    // {
+    //     if (context.started)  // 當按下按鍵時
+    //     {
+    //         player2KeyPressed = true;
+    //         Debug.Log("Dog 按下 Enter 鍵");
+    //     }
 
-        if (context.canceled)  // 當放開按鍵時
-        {
-            player2KeyPressed = false;
-        }
-    }
+    //     if (context.canceled)  // 當放開按鍵時
+    //     {
+    //         player2KeyPressed = false;
+    //     }
+    // }
     public void catInteraction(InputAction.CallbackContext context)
     {
         if (context.started)  // 當按下按鍵時
