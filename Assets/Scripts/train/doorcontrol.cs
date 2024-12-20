@@ -14,8 +14,9 @@ public class doorcontrol : MonoBehaviour
     private bool trigger = false;
     void Start()
     {
-        
+    
     }
+
 
     void Update()
     {   
