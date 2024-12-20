@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class HealthControl : MonoBehaviour
 {
     public GameObject[] hearts;
+    public GameObject failScene;
     private Image[] heartsImage;
     private int health;
     private float invincibilityTime = 1f; // 無敵時間
     private bool isInvincible = false;
     private SpriteRenderer spriteRenderer;
+    public TextMeshProUGUI timer;
+    private int currentTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,7 @@ public class HealthControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentTime = int.Parse(timer.text);
         UpdateHeartImage(health);
     }
     void UpdateHeartImage(int health) {
@@ -44,6 +49,38 @@ public class HealthControl : MonoBehaviour
         for (int i = heartsImage.Length-1; i > health-1; i--) {
             heartsImage[i].color = new Color(0f, 0f, 0f, 255f);
         }
+        if (health == 0) {
+            StartCoroutine(FadeIn());
+        }
+    }
+    private IEnumerator FadeIn()
+    {
+        float fadeDuration = 2.0f;
+        
+        failScene.SetActive(true);
+
+        
+        Image image = failScene.GetComponent<Image>();
+        Color color = image.color;
+
+        
+        color.a = 0;
+        image.color = color;
+
+        float elapsedTime = 0;
+
+        while (elapsedTime < fadeDuration) //慢慢調整透明度
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration); 
+            color.a = alpha; 
+            image.color = color; 
+            yield return null; 
+        }
+
+        
+        color.a = 1;
+        image.color = color;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -51,7 +88,7 @@ public class HealthControl : MonoBehaviour
         {
             if (!isInvincible) // 無敵時間不受傷
             {
-                if (health > 0)
+                if (health > 0 && currentTime > 0)
                 {
                     health--;
                     StartCoroutine(HandleInvincibility());

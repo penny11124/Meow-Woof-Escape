@@ -14,30 +14,34 @@ public class BlockGen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateSpawnInterval();
-        InvokeRepeating(nameof(SpawnBlock), 0, spawnInterval);
+        //UpdateSpawnInterval();
+        //InvokeRepeating(nameof(SpawnBlock), 0, spawnInterval);
     }
-
+    private IEnumerator StartWithDelay()
+    {
+        yield return new WaitForSeconds(1.0f); 
+    }
     // Update is called once per frame
     void Update()
     {
         if (float.TryParse(timer.text, out float parsedTime))
         {
             currentTime = parsedTime; // Update currentTime if parsing succeeds
-            Debug.Log(gameMode);
         }
         else
         {
             Debug.LogError("Failed to parse timer text as a number.");
         }
-        ChangeGameMode(currentTime);
+        if (currentTime <= 59) {
+            ChangeGameMode(currentTime);
+        }
         
     }
     void ChangeGameMode(float time)
     {
         int newGameMode = 0;
 
-        if (time <= 60 && time > 50)
+        if (time <= 58 && time > 50)
         {
             newGameMode = 1;
         }
@@ -78,13 +82,13 @@ public class BlockGen : MonoBehaviour
                 spawnInterval = 1.7f; // Medium spawning
                 break;
             case 3:
-                spawnInterval = 1.0f; // Faster spawning
+                spawnInterval = 1.3f; // Faster spawning
                 break;
             case 4:
-                spawnInterval = 0.75f; // Faster spawning
+                spawnInterval = 0.9f; // Faster spawning
                 break;
             default:
-                spawnInterval = 4.0f; // Default slow spawning
+                spawnInterval = 99.0f; // Barely spawning
                 break;
         }
 
