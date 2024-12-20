@@ -4,12 +4,13 @@ using UnityEngine;
 using TMPro;
 public class BlockGen : MonoBehaviour
 {
-    public GameObject blockPrefab;
+    public GameObject[] blockPrefab;
     public TextMeshProUGUI timer;
     private float currentTime;
     private int gameMode = 0; //¹CÀ¸Ãø«×
     private float spawnInterval;
     private float[] spawnPoints = new float[] {  2.0f, 4.0f, -2.0f, -4.0f};
+    private float lastSpawnPoint = -99f;
     // Start is called before the first frame update
     void Start()
     {
@@ -94,9 +95,20 @@ public class BlockGen : MonoBehaviour
     void SpawnBlock()
     {
         int randomIndex = Random.Range(0,spawnPoints.Length);
-        float spawnX = spawnPoints[randomIndex]; // Random X position
-        Vector3 spawnPosition = new Vector3(spawnX, transform.position.y, 0);
-        Instantiate(blockPrefab, spawnPosition, Quaternion.identity);
+        float spawnX = spawnPoints[randomIndex];
+        
+        while (spawnX == lastSpawnPoint) {
+            randomIndex = Random.Range(0, spawnPoints.Length);
+            spawnX = spawnPoints[randomIndex];
+        }
+        lastSpawnPoint = spawnX;
+
+        Vector3 spawnPosition = new Vector3(spawnX, transform.position.y, 0); 
+
+        int randomBlockIndex = Random.Range(0, blockPrefab.Length);
+        GameObject block = blockPrefab[randomBlockIndex];
+
+        Instantiate(block, spawnPosition, Quaternion.identity);
     }
 
 }
