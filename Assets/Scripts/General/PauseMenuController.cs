@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement; // 用於場景加載
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenu; // 拖入 PauseMenu 面板
-    public AudioSource bgmAudioSource1;
-    public AudioSource bgmAudioSource2;
 
     private bool isPaused = false; // 用來記錄暫停狀態
     private CatControls catControls; // 引用 CatControls
@@ -89,16 +87,12 @@ public class PauseMenuController : MonoBehaviour
         // 判斷是否需要禁用背景音樂
         if (scene.name == "ThirdScene") // 替換為特定場景名稱
         {
-            if (bgmAudioSource1 != null)
             if (audioSources[0] != null)
             {
-                bgmAudioSource1.Stop(); // 停止背景音樂
                 audioSources[0].Stop(); // 停止背景音樂
             }
-            if (bgmAudioSource2 != null)
             if (audioSources[1] != null)
             {
-                bgmAudioSource2.Play();
                 audioSources[1].Play();
             }
         }
