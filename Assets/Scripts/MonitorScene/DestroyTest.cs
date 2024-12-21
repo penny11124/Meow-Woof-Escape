@@ -49,7 +49,7 @@ public class DestroyTest : MonoBehaviour
         {
             catKeyPressed = true;
             // Destroy(gameObject);
-            Debug.Log("Cat 按下空白鍵");
+            // Debug.Log("Cat 按下空白鍵");
         }
 
         if (context.canceled)  // 當放開按鍵時
