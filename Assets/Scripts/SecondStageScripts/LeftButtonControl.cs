@@ -83,27 +83,26 @@ public class LeftButtonControl : MonoBehaviour
                 rb.isKinematic = true; // 设置为 kinematic，禁用物理作用
                 rb.velocity = Vector2.zero; // 清空速度
             }
-            // 将目标对象的颜色透明度减半
-            Renderer renderer = targetObject.GetComponent<Renderer>();
-            if (renderer != null && renderer.material != null)
+            Animator ani = targetObject.GetComponent<Animator>();
+            if (ani != null)
             {
-                // 确保材质支持透明模式
-                Material material = renderer.material;
-                material.SetFloat("_Mode", 3); // 设置为 Transparent 模式
-                material.SetOverrideTag("RenderType", "Transparent");
-                material.EnableKeyword("_ALPHABLEND_ON");
-                material.renderQueue = 3000;
+                ani.enabled = false; // 暂停 Animator 控制
+            }
+            SpriteRenderer renderer = targetObject.GetComponent<SpriteRenderer>();
+            if (renderer != null)
+            {
+                // 确保该对象有独立的材质
+                renderer.material = new Material(renderer.material);
 
-                // 修改颜色的 Alpha 通道
-                Color color = material.color;
-                color.a *= 0.5f;  // 设置透明度
-                material.color = color;
+                // 修改颜色的透明度
+                Color color = renderer.color;
+                color.a *= 0.5f; // 将透明度减半
+                renderer.color = color;
             }
             else
             {
-                Debug.LogWarning("目标对象缺少 Renderer 或材质！");
+                Debug.LogWarning("目标对象缺少 SpriteRenderer 组件！");
             }
-      
         }  
     }
 

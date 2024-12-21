@@ -9,6 +9,7 @@ public class DogAnimator : ScriptAnimator
     private Jumper jumper;
     private PlayerState playerState;
     private FacingDirection facingDirection;
+    private Climb climb;
     private Vector3 initialLocalScale;
     
     protected override void Init()
@@ -19,7 +20,8 @@ public class DogAnimator : ScriptAnimator
             nameof(AnimState.Jump),
             nameof(AnimState.Fall),
             nameof(AnimState.Run),
-            nameof(AnimState.Attack)
+            nameof(AnimState.Attack),
+            nameof(AnimState.Up)
             // nameof(AnimState.Victory)
         );
         #endif
@@ -28,6 +30,7 @@ public class DogAnimator : ScriptAnimator
         TryGetComponent<Jumper>(out jumper);
         TryGetComponent<PlayerState>(out playerState);
         TryGetComponent<FacingDirection>(out facingDirection);
+        TryGetComponent<Climb>(out climb);
         initialLocalScale = transform.localScale;
     }
 
@@ -39,6 +42,9 @@ public class DogAnimator : ScriptAnimator
         // }
         if(attacker.isAttacking){
             PlayStateIfNotInState(AnimState.Attack);
+        }
+        else if(climb.isClimbing){
+            PlayStateIfNotInState(AnimState.Up);
         }
         else if(jumper.isRising){
             PlayStateIfNotInState(AnimState.Jump);

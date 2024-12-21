@@ -10,7 +10,7 @@ public class Climb : MonoBehaviour
 
     private Rigidbody2D rb;
     private PlayerInput playerInput;
-    private bool isClimbing = false; // 是否在梯子上
+    public bool isClimbing = false; // 是否在梯子上
 
     void Start()
     {
