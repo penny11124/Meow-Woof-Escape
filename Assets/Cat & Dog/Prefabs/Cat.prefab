@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: -8039824419488386133}
   - component: {fileID: 5652360555801043466}
   - component: {fileID: 5652360555801043467}
+  - component: {fileID: 6422143100201948052}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Cat
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 654801511
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 2000733492, guid: c24556958ee0acf41a66c7d75157f330, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -341,3 +342,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93dda11f604031a4094508bf7edaa22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6422143100201948052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652360555801043473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e974c142a9d21f4eab1a5e12650a59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbSpeed: 3
+  climbableTag: Climbable
+  isClimbing: 0

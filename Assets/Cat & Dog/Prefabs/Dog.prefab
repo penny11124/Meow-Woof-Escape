@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: -3217883545886616677}
   - component: {fileID: 2721097233700690462}
   - component: {fileID: 3162864063955785647}
+  - component: {fileID: 6798558984370438628}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Dog
@@ -359,3 +360,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca6a968ef610de478687c702bdd6cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6798558984370438628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162864063955785623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e974c142a9d21f4eab1a5e12650a59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbSpeed: 3
+  climbableTag: Climbable
+  isClimbing: 0
