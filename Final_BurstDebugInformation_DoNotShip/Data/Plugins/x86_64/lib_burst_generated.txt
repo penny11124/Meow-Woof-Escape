@@ -166,9 +166,9 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Cinemachine.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
+--root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.2D.SpriteShape.Runtime.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
---root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Services.Core.Scheduler.dll
@@ -370,9 +370,9 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Cinemachine.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
+--root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.2D.SpriteShape.Runtime.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
---root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=C:\Users\Harley\OneDrive - 高雄師範大學\文件\GitHub\game-programming-final-project\Temp\StagingArea\Data\Managed\Unity.Services.Core.Scheduler.dll
