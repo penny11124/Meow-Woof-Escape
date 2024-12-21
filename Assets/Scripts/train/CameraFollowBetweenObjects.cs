@@ -4,7 +4,8 @@ public class CameraFollowBetweenObjects : MonoBehaviour
 {
     public Transform object1; // 物件1
     public Transform object2; // 物件2
-    public float yshift = 4;
+    public float yshift = 4f;
+    public float ymax = 1.27f;
 
     void Update()
     {
@@ -15,7 +16,7 @@ public class CameraFollowBetweenObjects : MonoBehaviour
             float middleY = (object1.position.y + object2.position.y) / 2;
 
             // 設定攝影機的新位置，Y 和 Z 軸保持不變
-            transform.position = new Vector3(middleX, middleY+yshift, transform.position.z);
+            transform.position = new Vector3(middleX, Mathf.Min(middleY+yshift,ymax), transform.position.z);
         }
     }
 }
