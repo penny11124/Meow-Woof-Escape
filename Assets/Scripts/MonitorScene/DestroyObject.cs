@@ -22,16 +22,16 @@ public class DestroyObject : MonoBehaviour
     // 當玩家進入碰撞範圍
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Debug.Log($"碰撞的對象是：{collision.collider.tag}");
+         Debug.Log($"碰撞的對象是：{collision.collider.tag}");
         if (collision.collider.CompareTag("Cat"))
         {
             catInContact = true;
-            // Debug.Log("Cat 接觸到物件");
+             Debug.Log("Cat 接觸到物件");
         }
         else if (collision.collider.CompareTag("Dog"))
         {
             dogInContact = true;
-            // Debug.Log("Dog 接觸到物件");
+             Debug.Log("Dog 接觸到物件");
         }
     }
 
@@ -41,12 +41,12 @@ public class DestroyObject : MonoBehaviour
         if (collision.collider.CompareTag("Cat"))
         {
             catInContact = false;
-            // Debug.Log("Cat 離開物件");
+             Debug.Log("Cat 離開物件");
         }
         else if (collision.collider.CompareTag("Dog"))
         {
             dogInContact = false;
-            // Debug.Log("Dog 離開物件");
+             Debug.Log("Dog 離開物件");
         }
     }
 
@@ -55,7 +55,7 @@ public class DestroyObject : MonoBehaviour
         if (context.started)  // 當按下按鍵時
         {
             catKeyPressed = true;
-            // Debug.Log("Cat 按下空白鍵");
+             Debug.Log("Cat 按下空白鍵");
         }
 
         if (context.canceled)  // 當放開按鍵時
@@ -69,7 +69,7 @@ public class DestroyObject : MonoBehaviour
         if (context.started)  // 當按下按鍵時
         {
             dogKeyPressed = true;
-            // Debug.Log("Dog 按下 Enter 鍵");
+             Debug.Log("Dog 按下 Enter 鍵");
         }
 
         if (context.canceled)  // 當放開按鍵時
