@@ -55,7 +55,7 @@ public class DestroyObject : MonoBehaviour
         if (context.started)  // 當按下按鍵時
         {
             catKeyPressed = true;
-            // Debug.Log("Cat 按下空白鍵");
+            Debug.Log("Cat 按下空白鍵");
         }
 
         if (context.canceled)  // 當放開按鍵時
