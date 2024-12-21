@@ -42,7 +42,7 @@ public class TypewriterEffect : MonoBehaviour
 
         // 切換到下一個場景
         NextLevelController.instance.LoadNextScene();
-        // SceneTransitionManager.instance.LoadSceneWithTransition("ThirdScene");
+        // SceneTransitionManager.instance.LoadSceneWithTransition("FirstScene");
     }
 
     IEnumerator FadeOutTextAndImage()

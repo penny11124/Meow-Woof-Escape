@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; // 用於場景加載
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -7,16 +8,12 @@ public class PauseMenuController : MonoBehaviour
 
     private bool isPaused = false; // 用來記錄暫停狀態
     private CatControls catControls; // 引用 CatControls
-    // private DogControls dogControls; // 引用 DogControls
     private static PauseMenuController instance;
 
     private void Awake()
     {
-        // Debug.Log("PauseMenuController: Awake 被調用！");
-        // 初始化 CatControls
         catControls = new CatControls();
-        // dogControls = new DogControls();
-        Debug.Log("CatControls 初始化完成");
+
         // 確保只有一個實例存在
         if (instance == null)
         {
@@ -31,10 +28,7 @@ public class PauseMenuController : MonoBehaviour
 
     private void Start()
     {
-        // Debug.Log("PauseMenuController: Start 被調用！");
         catControls.Enable();
-        // dogControls.Enable();
-        Debug.Log("Start內隱藏暫停菜單");
         pauseMenu.SetActive(false); // 隱藏暫停菜單
     }
 
@@ -43,9 +37,6 @@ public class PauseMenuController : MonoBehaviour
         // 訂閱 Pause 動作
         catControls.Cat.Pause.performed += OnPause;
         catControls.Enable();
-        // dogControls.Dog.Pause.performed += OnPause;
-        // dogControls.Enable();
-        // Debug.Log("CatControls 已啟用");
     }
 
     private void OnDisable()
@@ -53,14 +44,10 @@ public class PauseMenuController : MonoBehaviour
         // 取消訂閱 Pause 動作
         catControls.Cat.Pause.performed -= OnPause;
         catControls.Disable();
-        // dogControls.Dog.Pause.performed -= OnPause;
-        // dogControls.Disable();
-        // Debug.Log("CatControls 已禁用");
     }
 
     private void OnPause(InputAction.CallbackContext context)
     {
-        // Debug.Log("Pause 按鍵觸發");
         if (isPaused)
         {
             ResumeGame();
@@ -85,5 +72,12 @@ public class PauseMenuController : MonoBehaviour
         pauseMenu.SetActive(false); // 隱藏暫停菜單
         Time.timeScale = 1f;        // 恢復遊戲時間
         isPaused = false;           // 設置為非暫停狀態
+    }
+
+    public void ResetLevel()
+    {
+        Debug.Log("重置場景！");
+        Time.timeScale = 1f; // 確保時間恢復正常速度
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // 加載當前場景
     }
 }
