@@ -714,7 +714,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 50
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
   typeSpeed: 0.2
   fadeDuration: 2
   waitBeforeSwitch: 1
-  fullText: "\u4E00\u9593\u770B\u4F3C\u6B61\u6A02\u7684\u5BF5\u7269\u5E97\uFF0C\u6BCF\u5929\u90FD\u6709\u8A31\u591A\u5C0F\u5B69\u4F86\u8CB7\u65B0\u5BF5\u7269\uFF0C\u53EF\u662F\u5C0F\u5B69\u90FD\u6703\u628A\u5BF5\u7269\u990A\u6B7B...\r\n\u5BF5\u7269\u5E97\u88E1\u7684\u52D5\u7269\u90FD\u5F88\u60F3\u9003\u96E2\u9019\u500B\u53EF\u6015\u7684\u5730\u65B9\u3002\r\n\u6709\u4E00\u5929\u72D7\u8D81\u5E97\u54E1\u628A\u7C60\u5B50\u6253\u958B\u6642\uFF0C\u72D7\u885D\u4E86\u51FA\u53BB\u8F09\u8457\u8C93\u9003\u8DD1!\r\n"
+  fullText: "\u4F60\u5011\u8AA4\u5165\u4E86\u5E97\u9577\u5BB6\uFF0C\u9003\u51FA\u5E97\u9577\u5BB6!\r"
 --- !u!1 &1618871611
 GameObject:
   m_ObjectHideFlags: 0
