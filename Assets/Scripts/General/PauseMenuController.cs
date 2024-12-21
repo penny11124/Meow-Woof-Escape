@@ -26,6 +26,7 @@ public class PauseMenuController : MonoBehaviour
             Destroy(gameObject); // 如果已有實例，銷毀重複物件
         }
         audioSources = GetComponents<AudioSource>();
+        Debug.Log(audioSources);
     }
 
     private void Start()
@@ -39,6 +40,7 @@ public class PauseMenuController : MonoBehaviour
         // 訂閱 Pause 動作
         catControls.Cat.Pause.performed += OnPause;
         catControls.Enable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
@@ -46,6 +48,7 @@ public class PauseMenuController : MonoBehaviour
         // 取消訂閱 Pause 動作
         catControls.Cat.Pause.performed -= OnPause;
         catControls.Disable();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnPause(InputAction.CallbackContext context)
