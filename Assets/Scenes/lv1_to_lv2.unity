@@ -714,7 +714,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 50
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
   typeSpeed: 0.2
   fadeDuration: 2
   waitBeforeSwitch: 1
-  fullText: 
+  fullText: "\u4F60\u5011\u8AA4\u5165\u4E86\u5E97\u9577\u5BB6\uFF0C\u9003\u51FA\u5E97\u9577\u5BB6!\r"
 --- !u!1 &1618871611
 GameObject:
   m_ObjectHideFlags: 0
