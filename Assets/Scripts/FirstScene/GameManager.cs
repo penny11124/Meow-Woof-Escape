@@ -15,20 +15,22 @@ public class GameManager : MonoBehaviour
 
     public void SetCatInOut(bool state)
     {
-        if (!gameOver)
+        if(gameOver)
         {
-            catInOut = state;
-            CheckWinCondition();
+            return;
         }
+        catInOut = state;
+        CheckWinCondition();
     }
 
     public void SetDogInOut(bool state)
     {
-        if (!gameOver)
+        if(gameOver)
         {
-            catInOut = state;
-            CheckWinCondition();
+            return;
         }
+        dogInOut = state;
+        CheckWinCondition();
     }
 
     private void CheckWinCondition()
