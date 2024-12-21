@@ -71,11 +71,11 @@ public class MonitorController : MonoBehaviour
         while (true)
         {
             isDetecting = true; // 開始偵測
-            Debug.Log("開始偵測!!");
+            // Debug.Log("開始偵測!!");
             yield return new WaitForSeconds(detectionDelay); // 啟動1秒
 
             isDetecting = false; // 停止偵測
-            Debug.Log("停止偵測!!");
+            // Debug.Log("停止偵測!!");
             yield return new WaitForSeconds(detectionDelay); // 關閉1秒
         }
     }

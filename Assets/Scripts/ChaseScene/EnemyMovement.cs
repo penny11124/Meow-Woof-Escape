@@ -4,50 +4,58 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float moveSpeed = 2f;  // Speed at which the enemy moves
-    public float negativeMoveSpeed = -3f;  // Speed at which the enemy moves
-    public GameObject cabinet;    // Reference to the cabinet (used to check if it�s knocked down)
-    private bool isKnockedDown = false; 
+    public float moveSpeed = 3f;  // Speed at which the enemy moves
+    public Transform leftBoundary; // Left boundary for patrol
+    public Transform rightBoundary; // Right boundary for patrol
+
     private Rigidbody2D rb;
-    private float initialCabinetRotationZ;
-    private Animator anim;
-    private SpriteRenderer spriteRenderer;
+    private bool movingLeft = true; // Direction of movement
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (cabinet != null)
-        {
-            initialCabinetRotationZ = cabinet.transform.rotation.z;
-        }
     }
-    void Update()
+
+    private void Update()
     {
-        // Check if the cabinet has changed position
-        if (cabinet.transform.rotation.z != initialCabinetRotationZ)
+        // Patrol logic
+        Patrol();
+    }
+
+    private void Patrol()
+    {
+        if (movingLeft)
         {
-            isKnockedDown = true;
-            moveSpeed = negativeMoveSpeed;
-        }
-        // If the cabinet is not knocked down, move the enemy left
-        if (!isKnockedDown)
-        {
-            MoveEnemyToLeft();
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+
+            if (transform.position.x <= leftBoundary.position.x)
+            {
+                movingLeft = false;
+                Flip();
+            }
         }
         else
         {
-            MoveEnemyToLeft();
-            spriteRenderer.flipX = false;
-            //anim.enabled = false;
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+
+            if (transform.position.x >= rightBoundary.position.x)
+            {
+                movingLeft = true;
+                Flip();
+            }
         }
     }
 
-    // Move the enemy slowly to the left
-    void MoveEnemyToLeft()
+    private void Flip()
     {
-        rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+        // Flip the sprite to face the new direction
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 改變方向
+        movingLeft = !movingLeft;
+        Flip();
+    }
 }

@@ -21,7 +21,7 @@ public class ButtonWallTrigger : MonoBehaviour
         if (other.CompareTag("Dog"))
         {
             isDogOnButton = true;
-            Debug.Log("狗站在按鈕上！");
+            // Debug.Log("狗站在按鈕上！");
         }
     }
 
@@ -31,7 +31,7 @@ public class ButtonWallTrigger : MonoBehaviour
         if (other.CompareTag("Dog"))
         {
             isDogOnButton = false;
-            Debug.Log("狗離開按鈕！");
+            // Debug.Log("狗離開按鈕！");
         }
     }
 
