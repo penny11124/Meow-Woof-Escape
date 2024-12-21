@@ -32,7 +32,7 @@ public class Cabinet : MonoBehaviour
 
         private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Clerk"))
+        if (collision.gameObject.CompareTag("Clerk") || collision.gameObject.CompareTag("Floor"))
         {
             Destroy(gameObject);
         }

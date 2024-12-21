@@ -91,7 +91,7 @@ public class ObjectCollisionHandler : MonoBehaviour
 
             // 物品消失
             Destroy(gameObject);
-        } else if (collision.collider.CompareTag("Floor"))
+        } else if (collision.collider.CompareTag("Floor") || collision.collider.CompareTag("RollingBall"))
         {
             // 物品碰到地面後消失
             Destroy(gameObject);

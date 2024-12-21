@@ -16,6 +16,8 @@ public class MonitorController : MonoBehaviour
     private Material detectionMaterial;
     private bool isDetecting = false;
     private GameObject detectionMeshObject; // 子物件的引用
+    public FirstTimer timerScript; // 引用計時器腳本
+    bool isInAreaThisTime = false;
 
     void Start()
     {
@@ -71,6 +73,7 @@ public class MonitorController : MonoBehaviour
         while (true)
         {
             isDetecting = true; // 開始偵測
+            isInAreaThisTime = false;
             // Debug.Log("開始偵測!!");
             yield return new WaitForSeconds(detectionDelay); // 啟動1秒
 
@@ -134,6 +137,10 @@ public class MonitorController : MonoBehaviour
 
     private void DetectObjectsInArea()
     {
+        if (isInAreaThisTime)
+        {
+            return; // 如果本周期已經偵測過，直接退出
+        }
         // 偵測範圍基於圓心偏移位置
         Vector3 detectionCenter = transform.position + centerOffset;
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(detectionCenter, detectionRadius, detectionLayer);
@@ -154,6 +161,9 @@ public class MonitorController : MonoBehaviour
             {
                 Debug.Log($"{collider.gameObject.name} 在範圍內！");
                 // 在這裡處理 Game Over 邏輯
+                timerScript.ModifyTime(-5f);
+                isInAreaThisTime = true;
+                break;
             }
         }
     }

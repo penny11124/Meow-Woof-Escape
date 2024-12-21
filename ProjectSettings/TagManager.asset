@@ -13,6 +13,7 @@ TagManager:
   - Out
   - GoldenHeart
   - Clerk
+  - RollingBall
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Dog
   - Clerk
   - Obstacles
-  - 
+  - FallingObjects
   - 
   - 
   - 

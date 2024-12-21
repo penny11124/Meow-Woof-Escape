@@ -6,17 +6,25 @@ public class GameManager : MonoBehaviour
 {
     private bool catInOut = false; // 記錄貓是否碰到Out
     private bool dogInOut = false; // 記錄狗是否碰到Out
+    private bool gameOver = false; // 遊戲是否已結束
+
 
     public void SetCatInOut(bool state)
     {
-        catInOut = state;
-        CheckWinCondition();
+        if (!gameOver)
+        {
+            catInOut = state;
+            CheckWinCondition();
+        }
     }
 
     public void SetDogInOut(bool state)
     {
-        dogInOut = state;
-        CheckWinCondition();
+        if (!gameOver)
+        {
+            catInOut = state;
+            CheckWinCondition();
+        }
     }
 
     private void CheckWinCondition()
@@ -29,7 +37,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+        public void HandleFailure()
+    {
+        if (!gameOver)
+        {
+            gameOver = true; // 防止多次觸發失敗邏輯
+            Debug.Log("遊戲失敗!");
+            StartCoroutine(HandleGameOver());
+        }
+    }
+
     private IEnumerator HandleVictory()
+    {
+        yield return new WaitForSeconds(1f); // 延遲1秒
+        SceneManager.LoadScene("FirstScene"); // 重新加載場景
+    }
+
+    private IEnumerator HandleGameOver()
     {
         yield return new WaitForSeconds(1f); // 延遲1秒
         SceneManager.LoadScene("FirstScene"); // 重新加載場景
