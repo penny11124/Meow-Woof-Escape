@@ -20,9 +20,13 @@ public class Stagecontrol : MonoBehaviour
     {
         if(endStage && trueEnd){
             //True end
+            NextLevelController.instance.LoadNextScene();
+            endStage=false;
         }
         else if(endStage){
             //Bad end
+            SceneTransitionManager.instance.LoadSceneWithTransition("lv2_to_end");
+            endStage=false;
         }
     }
 }

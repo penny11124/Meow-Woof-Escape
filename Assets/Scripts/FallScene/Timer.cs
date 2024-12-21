@@ -8,12 +8,15 @@ public class Timer : MonoBehaviour
 {
     public float timerDuration = 62f; 
     private float timeRemaining;
+    private bool next_state = false;
     public TextMeshProUGUI timerText;
-    public GameObject winScene;
+    // public GameObject winScene;
     void Start()
     {
         timeRemaining = timerDuration; // Initialize the timer
         UpdateTimerDisplay();
+        next_state = true;
+        
     }
 
     void Update()
@@ -25,38 +28,43 @@ public class Timer : MonoBehaviour
             UpdateTimerDisplay();
         }
         else {
-            StartCoroutine(FadeIn());
+            // StartCoroutine(FadeIn());
+            if(next_state==true){
+            next_state = false;
+            NextLevelController.instance.LoadNextScene();
+            }
+
         }
     }
-    private IEnumerator FadeIn()
-    {
-        float fadeDuration = 2.0f;
+    // private IEnumerator FadeIn()
+    // {
+    //     float fadeDuration = 2.0f;
 
-        winScene.SetActive(true);
-
-
-        Image image = winScene.GetComponent<Image>();
-        Color color = image.color;
+    //     winScene.SetActive(true);
 
 
-        color.a = 0;
-        image.color = color;
-
-        float elapsedTime = 0;
-
-        while (elapsedTime < fadeDuration) //ºCºC½Õ¾ã³z©ú«×
-        {
-            elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            color.a = alpha;
-            image.color = color;
-            yield return null;
-        }
+    //     Image image = winScene.GetComponent<Image>();
+    //     Color color = image.color;
 
 
-        color.a = 1;
-        image.color = color;
-    }
+    //     color.a = 0;
+    //     image.color = color;
+
+    //     float elapsedTime = 0;
+
+    //     while (elapsedTime < fadeDuration) //ï¿½Cï¿½Cï¿½Õ¾ï¿½zï¿½ï¿½ï¿½ï¿½
+    //     {
+    //         elapsedTime += Time.deltaTime;
+    //         float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+    //         color.a = alpha;
+    //         image.color = color;
+    //         yield return null;
+    //     }
+
+
+    //     color.a = 1;
+    //     image.color = color;
+    // }
 
     void UpdateTimerDisplay()
     {

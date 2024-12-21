@@ -7,7 +7,6 @@ public class Continue : MonoBehaviour
     public void NextLevel(string nextScene)
     {
         Debug.Log("Change the scene to: " + nextScene);
-        SceneManager.LoadScene(nextScene);
-        //修改這條來進入結局(?)
+        NextLevelController.instance.LoadNextScene();
     }
 }
