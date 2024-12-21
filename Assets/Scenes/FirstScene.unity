@@ -2133,7 +2133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090b5552057720548a116931171d24af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerScript: {fileID: 0}
+  timerScript: {fileID: 520454506}
 --- !u!1 &466681326
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,7 +4434,7 @@ GameObject:
   - component: {fileID: 1004017027}
   - component: {fileID: 1004017029}
   - component: {fileID: 1004017028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
