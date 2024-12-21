@@ -11,6 +11,7 @@ public class PauseMenuController : MonoBehaviour
     private bool isPaused = false; // 用來記錄暫停狀態
     private CatControls catControls; // 引用 CatControls
     private static PauseMenuController instance;
+    private AudioSource[] audioSources;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class PauseMenuController : MonoBehaviour
         {
             Destroy(gameObject); // 如果已有實例，銷毀重複物件
         }
+        audioSources = GetComponents<AudioSource>();
     }
 
     private void Start()
@@ -88,12 +90,16 @@ public class PauseMenuController : MonoBehaviour
         if (scene.name == "ThirdScene") // 替換為特定場景名稱
         {
             if (bgmAudioSource1 != null)
+            if (audioSources[0] != null)
             {
                 bgmAudioSource1.Stop(); // 停止背景音樂
+                audioSources[0].Stop(); // 停止背景音樂
             }
             if (bgmAudioSource2 != null)
+            if (audioSources[1] != null)
             {
                 bgmAudioSource2.Play();
+                audioSources[1].Play();
             }
         }
         
