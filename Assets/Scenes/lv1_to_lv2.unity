@@ -746,7 +746,7 @@ MonoBehaviour:
   typeSpeed: 0.2
   fadeDuration: 2
   waitBeforeSwitch: 1
-  fullText: "\u8C93\u8207\u72D7\u6210\u529F\u9003\u96E2\u4E86\u5E97\u54E1\u8FFD\u6355\u96E2\u958B\u4E86\u5BF5\u7269\u5E97\uFF0C\u800C\u4ED6\u5011\u9032\u5165\u7684\u623F\u5B50\u7ADF\u7136\u662F\u5E97\u9577\u5BB6\u88E1\u3002"
+  fullText: "\u4E00\u9593\u770B\u4F3C\u6B61\u6A02\u7684\u5BF5\u7269\u5E97\uFF0C\u6BCF\u5929\u90FD\u6709\u8A31\u591A\u5C0F\u5B69\u4F86\u8CB7\u65B0\u5BF5\u7269\uFF0C\u53EF\u662F\u5C0F\u5B69\u90FD\u6703\u628A\u5BF5\u7269\u990A\u6B7B...\r\n\u5BF5\u7269\u5E97\u88E1\u7684\u52D5\u7269\u90FD\u5F88\u60F3\u9003\u96E2\u9019\u500B\u53EF\u6015\u7684\u5730\u65B9\u3002\r\n\u6709\u4E00\u5929\u72D7\u8D81\u5E97\u54E1\u628A\u7C60\u5B50\u6253\u958B\u6642\uFF0C\u72D7\u885D\u4E86\u51FA\u53BB\u8F09\u8457\u8C93\u9003\u8DD1!\r\n"
 --- !u!1 &1618871611
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9cf13974968d51847b31ab7440e0dd8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdca3d21fe18f8b4ebde396243afc070, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
