@@ -26,7 +26,10 @@ public class PauseMenuController : MonoBehaviour
             Destroy(gameObject); // 如果已有實例，銷毀重複物件
         }
         audioSources = GetComponents<AudioSource>();
+<<<<<<< Updated upstream
         Debug.Log(audioSources);
+=======
+>>>>>>> Stashed changes
     }
 
     private void Start()

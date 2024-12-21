@@ -2217,8 +2217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 178411556}
 
-  bgmAudioSource1: {fileID: 1896141848}
-  bgmAudioSource2: {fileID: 1896141848}
+=======
+
 --- !u!4 &1896141847
 Transform:
   m_ObjectHideFlags: 0
