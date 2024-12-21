@@ -762,7 +762,7 @@ MonoBehaviour:
   fadeDuration: 2
   buttonFadeDuration: 1
   waitBeforeSwitch: 1
-  fullText: "\u8C93\u8207\u72D7\u6210\u529F\u9003\u96E2\u51FA\u5E97\u9577\u5BB6\uFF0C\u4E4B\u5F8C\u5C07\u8981\u5EA6\u904E\u7F8E\u597D\u4E14\u81EA\u7531\u7684\u751F\u6D3B\n.........\u55CE?"
+  fullText: 
 --- !u!114 &1229906788
 MonoBehaviour:
   m_ObjectHideFlags: 0
