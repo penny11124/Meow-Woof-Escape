@@ -8,7 +8,7 @@ public class HealthControl : MonoBehaviour
     public GameObject[] hearts;
     public GameObject failScene;
     private Image[] heartsImage;
-    private int health;
+    [SerializeField] private int health;
     private float invincibilityTime = 1f; // 無敵時間
     private bool isInvincible = false;
     private SpriteRenderer spriteRenderer;
@@ -96,6 +96,16 @@ public class HealthControl : MonoBehaviour
                 }
             }
         }
+        if (collision.gameObject.CompareTag("GoldenHeart"))
+        {
+            
+            if (health < 3 && currentTime > 0)
+            {
+                 health++;
+                 Debug.Log("Character damaged. Health: " + health);
+            }
+            
+        }
     }
     private IEnumerator HandleInvincibility()
     {
@@ -114,5 +124,9 @@ public class HealthControl : MonoBehaviour
         // 確認最後角色是可見的
         spriteRenderer.enabled = true;
         isInvincible = false;
+    }
+    public int Gethealth() 
+    {
+        return health;
     }
 }

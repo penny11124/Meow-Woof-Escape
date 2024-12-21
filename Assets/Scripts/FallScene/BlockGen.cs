@@ -4,8 +4,11 @@ using UnityEngine;
 using TMPro;
 public class BlockGen : MonoBehaviour
 {
-    public GameObject[] blockPrefab;
+    public GameObject[] blockPrefab; //傷害道具
+    public GameObject goldenHeart; //補血道具
     public TextMeshProUGUI timer;
+    public GameObject baby;
+    private int health;
     private float currentTime;
     private int gameMode = 0; //遊戲難度
     private float spawnInterval;
@@ -24,6 +27,7 @@ public class BlockGen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        health = baby.GetComponent<HealthControl>().Gethealth();
         if (float.TryParse(timer.text, out float parsedTime))
         {
             currentTime = parsedTime; // Update currentTime if parsing succeeds
@@ -98,10 +102,10 @@ public class BlockGen : MonoBehaviour
 
     void SpawnBlock()
     {
-        int randomIndex = Random.Range(0,spawnPoints.Length);
+        int randomIndex = Random.Range(0,spawnPoints.Length); //隨機決定生成位置x
         float spawnX = spawnPoints[randomIndex];
         
-        while (spawnX == lastSpawnPoint) {
+        while (spawnX == lastSpawnPoint) {  //兩次隨機位置必不同
             randomIndex = Random.Range(0, spawnPoints.Length);
             spawnX = spawnPoints[randomIndex];
         }
@@ -109,10 +113,24 @@ public class BlockGen : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(spawnX, transform.position.y, 0); 
 
-        int randomBlockIndex = Random.Range(0, blockPrefab.Length);
+        int randomBlockIndex = Random.Range(0, blockPrefab.Length); //隨機決定生成物件
         GameObject block = blockPrefab[randomBlockIndex];
 
-        Instantiate(block, spawnPosition, Quaternion.identity);
+        if (health < 3)
+        {
+            int heartprob = Random.Range(0, 100);
+            if (heartprob < 4)
+            {
+                Instantiate(goldenHeart, spawnPosition, Quaternion.identity);
+            }
+            else {
+                Instantiate(block, spawnPosition, Quaternion.identity);
+            }
+        }
+        else {
+            Instantiate(block, spawnPosition, Quaternion.identity);
+        }
+        
     }
 
 }

@@ -2331,7 +2331,9 @@ MonoBehaviour:
   - {fileID: 5362330075681705922, guid: 2228c47961720034b81f00e33895615b, type: 3}
   - {fileID: 8600215099793888003, guid: 7c189fce69170904b95e6ccfee3ab292, type: 3}
   - {fileID: 359600664528049437, guid: 127d6951d520d9841ac5499c51474062, type: 3}
+  goldenHeart: {fileID: 3632183607560213093, guid: 99994c4a2dfcdd04781e2f2f20e2ed0b, type: 3}
   timer: {fileID: 391875383}
+  baby: {fileID: 1680286677}
 --- !u!1 &1024916167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,7 +2380,7 @@ GameObject:
   - component: {fileID: 1162628832}
   - component: {fileID: 1162628831}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2505,7 +2507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 64.95}
+  m_AnchoredPosition: {x: 0, y: 64.94998}
   m_SizeDelta: {x: 0, y: -186.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1205525803
@@ -3213,6 +3215,7 @@ MonoBehaviour:
   - {fileID: 198447963}
   - {fileID: 2056782121}
   failScene: {fileID: 88541255}
+  health: 0
   timer: {fileID: 391875383}
 --- !u!95 &1680286684
 Animator:
@@ -3699,7 +3702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 64.95}
+  m_AnchoredPosition: {x: 0, y: 64.94998}
   m_SizeDelta: {x: 0, y: -186.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973614491
