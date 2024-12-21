@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d8b4e79d64af564f8fe845dd27616f7
-      internalID: -1105373174
+      spriteID: 5749f2c51aac517418fbd1abf2ec4ddd
+      internalID: -388741518
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f401670d361330646bb0c84de3472cf4
-      internalID: -939402016
+      spriteID: 0b0d30cf69ade9c4f914d1f350b080ec
+      internalID: -1067064200
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82af1b23356f60845af6359f19c397ef
-      internalID: 1932884195
+      spriteID: 9da266d5bf510574fa5398d05e68802d
+      internalID: 690094160
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6599ab5ef9f303044ba17b38e3f5528b
-      internalID: 798002971
+      spriteID: f9fd22248724efd4d92a347e59bc7ebd
+      internalID: 844609503
       vertices: []
       indices: 
       edges: []
@@ -202,8 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e8e57e616fcd6d489a4cc6814d50915
-      internalID: -921290055
+      spriteID: 01f8c8f457f0d754889b36f610145d04
+      internalID: 236361172
       vertices: []
       indices: 
       edges: []
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3499d8aed447b334abc953ee43d834b2
-      internalID: 782311692
+      spriteID: 493b9d9a503c11448a520cb140e04eed
+      internalID: -1327543323
       vertices: []
       indices: 
       edges: []
@@ -240,12 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_3534_0: -1105373174
-      IMG_3534_4: -921290055
-      IMG_3534_3: 798002971
-      IMG_3534_1: -939402016
-      IMG_3534_2: 1932884195
-      IMG_3534_5: 782311692
+      IMG_3534_0: -388741518
+      IMG_3534_4: 236361172
+      IMG_3534_3: 844609503
+      IMG_3534_1: -1067064200
+      IMG_3534_2: 690094160
+      IMG_3534_5: -1327543323
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

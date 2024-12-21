@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73f3dfb0668e8ee4ca07b9b1ae66dee1
-      internalID: 1599245131
+      spriteID: 12181f97a235b9b499c9916b3fe72024
+      internalID: 1251811753
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 270b674e9c56918489ad26aa7551b551
-      internalID: -1979211292
+      spriteID: 18ae2f79429da304785c3c050edc4b96
+      internalID: -1576394998
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25b049e6e14bf0e48a303cd39a7a6099
-      internalID: -184453067
+      spriteID: 6dcee5aa32188d4419a3530f20a91235
+      internalID: 1607624746
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd7652e1da8bad645b989f2f9780221c
-      internalID: 1074974030
+      spriteID: 35e435f41fb39d7429ac46bd72dac504
+      internalID: -739994805
       vertices: []
       indices: 
       edges: []
@@ -202,8 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2cef9a141331dc42b0c56f9a82d8600
-      internalID: -224975880
+      spriteID: 5b784fbe9f1c161478de4a080a3064b8
+      internalID: -951922877
       vertices: []
       indices: 
       edges: []
@@ -223,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73e91f00078060e47968d37dbff7fb85
-      internalID: -1675520973
+      spriteID: b13ff9a8487cd2648be071d4b328a867
+      internalID: 673608384
       vertices: []
       indices: 
       edges: []
@@ -240,12 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_3533_2: -184453067
-      IMG_3533_3: 1074974030
-      IMG_3533_5: -1675520973
-      IMG_3533_1: -1979211292
-      IMG_3533_4: -224975880
-      IMG_3533_0: 1599245131
+      IMG_3533_2: 1607624746
+      IMG_3533_3: -739994805
+      IMG_3533_5: 673608384
+      IMG_3533_1: -1576394998
+      IMG_3533_4: -951922877
+      IMG_3533_0: 1251811753
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
