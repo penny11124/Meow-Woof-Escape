@@ -10,6 +10,7 @@ public class CatAnimator : ScriptAnimator
     private PlayerState playerState;
     private FacingDirection facingDirection;
     private Vector3 initialLocalScale;
+    private Climb climb;
     
     protected override void Init()
     {
@@ -19,7 +20,8 @@ public class CatAnimator : ScriptAnimator
             nameof(AnimState.Jump),
             nameof(AnimState.Fall),
             nameof(AnimState.Run),
-            nameof(AnimState.Attack)
+            nameof(AnimState.Attack),
+            nameof(AnimState.Up)
             // nameof(AnimState.Victory)
         );
         #endif
@@ -28,6 +30,7 @@ public class CatAnimator : ScriptAnimator
         TryGetComponent<Jumper>(out jumper);
         TryGetComponent<PlayerState>(out playerState);
         TryGetComponent<FacingDirection>(out facingDirection);
+        TryGetComponent<Climb>(out climb);
         initialLocalScale = transform.localScale;
     }
 
@@ -39,6 +42,9 @@ public class CatAnimator : ScriptAnimator
         // }
         if(attacker.isAttacking){
             PlayStateIfNotInState(AnimState.Attack);
+        }
+        else if(climb.isClimbing){
+            PlayStateIfNotInState(AnimState.Up);
         }
         else if(jumper.isRising){
             PlayStateIfNotInState(AnimState.Jump);
