@@ -8,6 +8,5 @@ public class Continue : MonoBehaviour
     {
         Debug.Log("Change the scene to: " + nextScene);
         SceneManager.LoadScene(nextScene);
-        //修改這條來進入結局(?)
     }
 }

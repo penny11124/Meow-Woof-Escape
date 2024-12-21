@@ -14,6 +14,7 @@ TagManager:
   - GoldenHeart
   - Clerk
   - RollingBall
+  - Climbable
   layers:
   - Default
   - TransparentFX
