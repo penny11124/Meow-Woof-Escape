@@ -24,12 +24,14 @@ public class doorcontrol : MonoBehaviour
             if(trigger==false && hadkey){
                 trigger = true;
                 Opendoor();
+                NextLevelController.instance.LoadNextScene();
             }
         }         
         else if (player2InContact && player2KeyPressed){
             if(trigger==false && hadkey){
                 trigger = true;
                 Opendoor();
+                NextLevelController.instance.LoadNextScene();
             }
         } 
     }

@@ -8,6 +8,7 @@ public class PauseMenuController : MonoBehaviour
     private bool isPaused = false; // 用來記錄暫停狀態
     private CatControls catControls; // 引用 CatControls
     // private DogControls dogControls; // 引用 DogControls
+    private static PauseMenuController instance;
 
     private void Awake()
     {
@@ -16,6 +17,16 @@ public class PauseMenuController : MonoBehaviour
         catControls = new CatControls();
         // dogControls = new DogControls();
         Debug.Log("CatControls 初始化完成");
+        // 確保只有一個實例存在
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // 保留物件在場景之間切換
+        }
+        else
+        {
+            Destroy(gameObject); // 如果已有實例，銷毀重複物件
+        }
     }
 
     private void Start()
