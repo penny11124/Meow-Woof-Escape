@@ -32,9 +32,9 @@ public class FirstTimer : MonoBehaviour
             timeRemaining = Mathf.Max(timeRemaining, 0); // Clamp the timer at 0
             UpdateTimerDisplay();
 
-            Debug.Log("timeRemaining: " + timeRemaining);
+            // Debug.Log("timeRemaining: " + timeRemaining);
             // 當時間結束時觸發遊戲失敗
-            if (timeRemaining == 0)
+            if (timeRemaining <= 0)
             {
                 gameManager?.HandleFailure();
             }
