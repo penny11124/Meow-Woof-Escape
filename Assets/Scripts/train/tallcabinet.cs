@@ -112,6 +112,6 @@ public class tallcabinet : MonoBehaviour
         }
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
+        Destroy(gameObject);
     }
-
 }

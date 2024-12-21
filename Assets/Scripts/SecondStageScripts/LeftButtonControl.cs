@@ -84,17 +84,24 @@ public class LeftButtonControl : MonoBehaviour
                 rb.velocity = Vector2.zero; // 清空速度
             }
             // 将目标对象的颜色透明度减半
-            SpriteRenderer spriteRenderer = targetObject.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
+            Renderer renderer = targetObject.GetComponent<Renderer>();
+            if (renderer != null && renderer.material != null)
             {
-                Color color = spriteRenderer.color;
-                color.a *= 0.5f; // 将透明度减半
-                Debug.LogWarning(color.a);
-                spriteRenderer.color = color;
+                // 确保材质支持透明模式
+                Material material = renderer.material;
+                material.SetFloat("_Mode", 3); // 设置为 Transparent 模式
+                material.SetOverrideTag("RenderType", "Transparent");
+                material.EnableKeyword("_ALPHABLEND_ON");
+                material.renderQueue = 3000;
+
+                // 修改颜色的 Alpha 通道
+                Color color = material.color;
+                color.a *= 0.5f;  // 设置透明度
+                material.color = color;
             }
             else
             {
-                Debug.LogWarning("目标对象上没有 SpriteRenderer 组件！");
+                Debug.LogWarning("目标对象缺少 Renderer 或材质！");
             }
       
         }  

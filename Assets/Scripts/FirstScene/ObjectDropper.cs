@@ -83,8 +83,6 @@ public class ObjectCollisionHandler : MonoBehaviour
     {
         if (collision.collider.CompareTag("Cat") || collision.collider.CompareTag("Dog"))
         {
-            Debug.Log($"{gameObject.name} 砸中 {collision.collider.name}!");
-
             // 扣除 10 秒時間
             if (timerScript != null)
             {
@@ -92,6 +90,10 @@ public class ObjectCollisionHandler : MonoBehaviour
             }
 
             // 物品消失
+            Destroy(gameObject);
+        } else if (collision.collider.CompareTag("Floor"))
+        {
+            // 物品碰到地面後消失
             Destroy(gameObject);
         }
     }

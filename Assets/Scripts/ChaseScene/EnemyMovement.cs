@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     public Transform rightBoundary; // Right boundary for patrol
 
     private Rigidbody2D rb;
-    private bool movingLeft = true; // Direction of movement
+    private bool movingLeft = false; // Direction of movement
 
     private void Start()
     {

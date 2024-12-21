@@ -12,6 +12,7 @@ TagManager:
   - Cabinet
   - Out
   - GoldenHeart
+  - Clerk
   layers:
   - Default
   - TransparentFX
