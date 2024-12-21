@@ -82,7 +82,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 654801511
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1547585108, guid: 56511fb792b962147a02ab7bd610f979, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -166,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.02}
+  m_Size: {x: 0.3, y: 0.02}
   m_EdgeRadius: 0
 --- !u!95 &1628593314829048135
 Animator:
@@ -249,6 +249,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3e122251-5706-4bc8-a9f6-bffc859f9e83
     m_ActionName: Dog/interaction[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: db76e4bc-3679-47f8-82cb-28dca13eaffd
+    m_ActionName: Dog/MoveUp[/Keyboard/upArrow,/Keyboard/downArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Dog

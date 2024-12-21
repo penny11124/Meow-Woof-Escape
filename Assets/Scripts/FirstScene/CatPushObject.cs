@@ -17,7 +17,7 @@ public class CatPushObject : MonoBehaviour
             // 當按下空白鍵並且靠近櫃子時，施加水平推動力
             Vector2 pushDirection = new Vector2(transform.localScale.x, 0).normalized; // 根據角色面向方向推動
             cabinetRb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
-            Debug.Log("推動櫃子！");
+            // Debug.Log("推動櫃子！");
         }
     }
 
@@ -28,7 +28,7 @@ public class CatPushObject : MonoBehaviour
         {
             isNearCabinet = true;
             cabinetRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            Debug.Log("靠近櫃子，可以推動");
+            // Debug.Log("靠近櫃子，可以推動");
         }
     }
 
@@ -38,7 +38,7 @@ public class CatPushObject : MonoBehaviour
         {
             isNearCabinet = false;
             cabinetRb = null;
-            Debug.Log("離開櫃子");
+            // Debug.Log("離開櫃子");
         }
     }
 }

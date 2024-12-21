@@ -5,7 +5,7 @@ public class Camera : MonoBehaviour
     public Transform object1; // 物件1
     public Transform object2; // 物件2
 
-    public float leftLimit = -87.14f; // 攝影機最左邊的位置
+    public float leftLimit = -122.44f; // 攝影機最左邊的位置
     public float rightLimit = 87.76f; // 攝影機最右邊的位置
 
     void Update()
