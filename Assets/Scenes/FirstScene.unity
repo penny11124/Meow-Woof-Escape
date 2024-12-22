@@ -8897,6 +8897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hadkey: 1
+  hadkey: 0
 --- !u!61 &1985369322
 BoxCollider2D:
   m_ObjectHideFlags: 0
