@@ -2974,6 +2974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1857899573}
   - component: {fileID: 1857899574}
+  - component: {fileID: 1857899575}
   m_Layer: 0
   m_Name: 'NextLevelController '
   m_TagString: Untagged
@@ -3009,6 +3010,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87e2fd1607a0d43be871dd84a21257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1857899575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857899572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c4ccafad3d47b40b5b61510a51acf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWidth: 1920
+  targetHeight: 1000
+  isFullScreen: 1
 --- !u!1 &1896141845
 GameObject:
   m_ObjectHideFlags: 0
