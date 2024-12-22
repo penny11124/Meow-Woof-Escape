@@ -631,6 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be637017c808248b6ddd7de2b77c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuController: {fileID: 1896141846}
 --- !u!1 &250301567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,6 +3041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 178411556}
+  isPaused: 0
 --- !u!4 &1896141847
 Transform:
   m_ObjectHideFlags: 0
@@ -3860,6 +3862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be637017c808248b6ddd7de2b77c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuController: {fileID: 0}
 --- !u!1 &2135304641
 GameObject:
   m_ObjectHideFlags: 0

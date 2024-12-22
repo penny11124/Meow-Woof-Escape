@@ -6,7 +6,7 @@ public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenu; // 拖入 PauseMenu 面板
 
-    private bool isPaused = false; // 用來記錄暫停狀態
+    public bool isPaused = false; // 用來記錄暫停狀態
     private CatControls catControls; // 引用 CatControls
     private static PauseMenuController instance;
     private AudioSource[] audioSources;
