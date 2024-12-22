@@ -83,7 +83,11 @@ public class PauseMenuController : MonoBehaviour
         Debug.Log("重置場景！");
         Time.timeScale = 1f; // 確保時間恢復正常速度
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // 加載當前場景
+
+        // 在重置後繼續遊戲
+        ResumeGame(); // 確保時間正常，並隱藏暫停菜單
     }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // 判斷是否需要禁用背景音樂
@@ -98,6 +102,5 @@ public class PauseMenuController : MonoBehaviour
                 audioSources[1].Play();
             }
         }
-        
     }
 }
