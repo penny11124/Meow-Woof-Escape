@@ -1,8 +1,6 @@
 # 🐱🐶 喵汪夜密逃 Meow & Woof: Midnight Escape
 
-> 一款雙人同機合作的2D解謎冒險遊戲。玩家分別操控一隻貓與一隻狗，從可怕的寵物店一路逃出，途中必須分工合作、同步行動，才能突破重重關卡，並走向不同的結局。
-
-> 2024 Game Programming Final Project
+> 2024 Game Programming Final Project ── 一款雙人同機合作的2D解謎冒險遊戲。玩家分別操控一隻貓與一隻狗，從可怕的寵物店一路逃出，途中必須分工合作、同步行動，才能突破重重關卡，並走向不同的結局。
 
 ![Unity](https://img.shields.io/badge/Engine-Unity%202021.3-000000?logo=unity&logoColor=white)
 ![C#](https://img.shields.io/badge/Language-C%23-239120?logo=csharp&logoColor=white)
